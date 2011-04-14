@@ -1,0 +1,61 @@
+{"contributors":null,"place":{
+  "country_code":"MX",
+  "url":"http:\/\/api.twitter.com\/1\/geo\/id\/f1b0438c137d4e04.json",
+  "bounding_box":{
+    "type":"Polygon",
+    "coordinates":[
+      [
+        [-99.995232,16.68408],
+        [-99.476067,16.68408],
+        [-99.476067,17.233886],
+        [-99.995232,17.233886]
+      ]
+    ]
+  },
+  "place_type":"city",
+  "name":"Acapulco de Ju\u00e1rez",
+  "country":"Mexico",
+  "attributes":{},
+  "id":"f1b0438c137d4e04",
+  "full_name":"Acapulco de Ju\u00e1rez, Guerrero"
+},"user":{
+  "profile_sidebar_fill_color":"bbebed",
+  "id_str":"78499837",
+  "follow_request_sent":null,
+  "profile_background_tile":true,
+  "url":"http:\/\/100natural.com\/",
+  "show_all_inline_media":true,
+  "following":null,
+  "verified":false,
+  "geo_enabled":true,
+  "profile_link_color":"c29bc2",
+  "is_translator":false,
+  "profile_sidebar_border_color":"db5e77",
+  "listed_count":0,
+  "statuses_count":2506,
+  "description":"100%natural restaurantes logistica produccion",
+  "profile_use_background_image":true,
+  "contributors_enabled":false,
+  "created_at":"Wed Sep 30 03:17:28 +0000 2009",
+  "profile_background_color":"d620e0",
+  "protected":false,
+  "profile_image_url":"http:\/\/a0.twimg.com\/profile_images\/1251182845\/el_renzo_japan_normal.JPG",
+  "profile_background_image_url":"http:\/\/a3.twimg.com\/profile_background_images\/137024367\/luky.jpg",
+  "friends_count":43,
+  "location":"\u00dcT: 0.0,0.0",
+  "name":"Renzo Bonassin",
+  "notifications":null,
+  "screen_name":"Renzo_Bonassin",
+  "id":78499837,
+  "lang":"en",
+  "time_zone":"Mexico City",
+  "utc_offset":-21600,
+  "favourites_count":10,
+  "profile_text_color":"9d8db3",
+  "followers_count":97
+},"retweeted":false,"in_reply_to_user_id_str":null,"id_str":"45997398371209216","retweet_count":0,"coordinates":{
+  "type":"Point",
+  "coordinates":[-99.876232,16.861458]
+},"text":"RT @elaaronGAYO: Yo quiero con @CarlaMorrisonmx \/\/ tu, yo y todosssss!!! http:\/\/myloc.me\/iqkpP","in_reply_to_status_id":null,"source":"\u003Ca href=\"http:\/\/ubersocial.com\" rel=\"nofollow\"\u003E\u00dcberSoci
+  al\u003C\/a\u003E","truncated":false,"favorited":false,"created_at":"Fri Mar 11 00:00:09 +0000
+2011","geo":{"type":"Point","coordinates":[16.861458,-99.876232]},"in_reply_to_screen_name":null,"in_reply_to_user_id":null,"id":45997398371209216,"in_reply_to_status_id_str":null,"entities":{"urls":[{"indices":[73,94],"url":"http:\/\/myloc.me\/iqkpP","expanded_url":null}],"hashtags":[],"user_mentions":[{"indices":[3,15],"id_str":"153651910","name":"aaron macias","screen_name":"elaaronGAYO","id":153651910},{"indices":[31,47],"id_str":"44465139","name":"Carla Morrison","screen_name":"CarlaMorrisonmx","id":44465139}]}}
