@@ -17,7 +17,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <atmosphere.version>0.9-SNAPSHOT</atmosphere.version>
-    <jetty.version>8.0.1.v20110908</jetty.version>
+    <jetty.version>8.0.3.v20111011</jetty.version>
     <jersey.version>1.5</jersey.version>
     <scala.version>2.9.0</scala.version>
     <servlet.api>2.5</servlet.api>
