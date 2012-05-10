@@ -17,40 +17,6 @@
     </encoder>
   </appender>
 
-  <!--<logger name="org.apache.http" level="WARN"/>-->
-
-  <logger name="twimpact.ely" level="DEBUG" additivity="false">
-    <appender-ref ref="STDOUT"/>
-  </logger>
-
-  <logger name="twimpact.io" level="INFO" additivity="false">
-    <appender-ref ref="STDERR"/>
-  </logger>
-
-  <logger name="twimpact.twitter.LinkExpander" level="WARN" additivity="false">
-    <appender-ref ref="STDERR"/>
-  </logger>
-
-  <logger name="twimpact.ely.actors.TwitterEventProducer" level="INFO" additivity="false">
-    <appender-ref ref="STDOUT"/>
-  </logger>
-
-  <!-- level => INFO or DEBUG -->
-  <logger name="twimpact.ely.actors.TwitterAnalyzerActor" level="DEBUG" additivity="false">
-    <appender-ref ref="STDOUT"/>
-  </logger>
-
-  <logger name="twimpact.twitter.RetweetAnalyzer" level="DEBUG" additivity="false">
-    <appender-ref ref="STDERR"/>
-  </logger>
-
-  <logger name="org.atmosphere" level="DEBUG" additivity="false">
-    <appender-ref ref="STDERR"/>
-  </logger>
-
-  <!--<logger name="org.eclipse.jetty" level="DEBUG" additivity="false">-->
-  <!--<appender-ref ref="STDERR"/>-->
-  <!--</logger>-->
 
   <root level="INFO">
     <appender-ref ref="STDERR"/>

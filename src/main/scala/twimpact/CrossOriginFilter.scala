@@ -4,10 +4,6 @@
 
 package twimpact
 
-/*
- * Copyright (c) 2011 TWIMPACT UG (haftungsbeschraenkt). All rights reserved.
- */
-
 import javax.servlet.http.HttpServletRequest
 
 /**

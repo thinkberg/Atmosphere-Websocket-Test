@@ -9,32 +9,17 @@
   <display-name>TWIMPACT Atmosphere Test</display-name>
 
   <filter>
-    <filter-name>CORS</filter-name>
-    <filter-class>twimpact.CrossOriginFilter</filter-class>
-  </filter>
-
-  <filter-mapping>
-    <filter-name>CORS</filter-name>
-    <url-pattern>/1/*</url-pattern>
-  </filter-mapping>
-
-  <servlet>
-    <description>AtmosphereServlet</description>
-    <servlet-name>AtmosphereServlet</servlet-name>
-    <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
+    <filter-name>AtmosphereServlet</filter-name>
+    <filter-class>org.atmosphere.cpr.AtmosphereFilter</filter-class>
+    <async-supported>true</async-supported>
     <init-param>
-      <param-name>com.sun.jersey.spi.container.ResourceFilters</param-name>
-      <param-value>twimpact.rest.auth.basic.BasicAuthResourceFilterFactory</param-value>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>twimpact.atmosphere</param-value>
     </init-param>
     <init-param>
       <param-name>org.atmosphere.cpr.dropAccessControlAllowOriginHeader</param-name>
       <param-value>true</param-value>
     </init-param>
-    <!--<init-param>-->
-      <!--<param-name>org.atmosphere.websocket.WebSocketProcessor</param-name>-->
-      <!--<param-value>org.atmosphere.websocket.protocol.EchoProtocol</param-value>-->
-      <!--&lt;!&ndash;<param-value>twimpact.ely.atmosphere.ElyWebSocketProtocol</param-value>&ndash;&gt;-->
-    <!--</init-param>-->
     <init-param>
       <param-name>org.atmosphere.useWebSocket</param-name>
       <param-value>true</param-value>
@@ -43,15 +28,34 @@
       <param-name>org.atmosphere.useNative</param-name>
       <param-value>true</param-value>
     </init-param>
-    <load-on-startup>1</load-on-startup>
-    <async-supported>true</async-supported>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AtmosphereServlet</servlet-name>
+  </filter>
+  <filter-mapping>
+    <filter-name>AtmosphereServlet</filter-name>
     <url-pattern>/1/*</url-pattern>
-  </servlet-mapping>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>JerseyFilter</filter-name>
+    <filter-class>com.sun.jersey.spi.container.servlet.ServletContainer</filter-class>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>twimpact.jersey</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
+      <param-value>/images/.*</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>JerseyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 </web-app>
