@@ -1,3 +1,13 @@
+It is an example to check the following:
+
+- serve /* controller/view stuff and static content
+- serve /1/* serve atmosphere stuff
+
+Examples:
+
+http://localhost:8082/ - should display a simple web page with a static image
+http://localhost:8082/1/json - should display some json data
+
 This is a simple test for the websocket functionality in atmosphere.
 
 (c) 2011 Matthias L. Jugel http://twimpact.com/
