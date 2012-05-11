@@ -5,6 +5,6 @@
       context-root="/1/*"
       support-session="true"
       class-name="org.atmosphere.handler.ReflectorServletProcessor">
-    <property name="filterClassName" value="com.sun.jersey.spi.container.servlet.ServletContainer"/>
+    <property name="servletClassName" value="com.sun.jersey.spi.container.servlet.ServletContainer"/>
   </atmosphere-handler>
 </atmosphere-handlers>

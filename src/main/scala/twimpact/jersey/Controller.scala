@@ -2,6 +2,9 @@ package twimpact.jersey
 
 import com.sun.jersey.api.view.Viewable
 import javax.ws.rs.{Path, GET}
+import javax.servlet.http.HttpServletRequest
+import javax.ws.rs.core.Context
+import grizzled.slf4j.Logging
 
 /**
  * Test Handler
@@ -10,8 +13,11 @@ import javax.ws.rs.{Path, GET}
  */
 
 @Path("/")
-class Controller {
+class Controller(@Context request: HttpServletRequest) extends Logging {
 
   @GET
-  def view = new Viewable("/index.jsp")
+  def view = {
+    debug(request)
+    new Viewable("/index.jsp")
+  }
 }
