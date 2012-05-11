@@ -24,6 +24,7 @@
       <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
       <param-value>/(images)/.*</param-value>
     </init-param>
+    <!-- this did the trick -->
     <init-param>
       <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
       <param-value>true</param-value>
