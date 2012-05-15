@@ -14,6 +14,8 @@
   <h1>A Test Page</h1>
   <p>
     <img src="images/test.png" width="200" height="80" alt="test"/>
+    <br/>
+    Here should be some text: [${it.sometext}]
   </p>
 </body>
 </html>

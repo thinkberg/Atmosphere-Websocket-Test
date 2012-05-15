@@ -2,7 +2,7 @@
 
 <atmosphere-handlers>
   <atmosphere-handler
-      context-root="/1/*"
+      context-root="/*"
       support-session="true"
       class-name="org.atmosphere.handler.ReflectorServletProcessor">
     <property name="servletClassName" value="com.sun.jersey.spi.container.servlet.ServletContainer"/>

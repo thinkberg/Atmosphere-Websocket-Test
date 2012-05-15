@@ -5,6 +5,7 @@ import javax.ws.rs.{Path, GET}
 import javax.servlet.http.HttpServletRequest
 import javax.ws.rs.core.Context
 import grizzled.slf4j.Logging
+import collection.JavaConverters._
 
 /**
  * Test Handler
@@ -18,6 +19,6 @@ class Controller(@Context request: HttpServletRequest) extends Logging {
   @GET
   def view = {
     debug(request)
-    new Viewable("/index.jsp")
+    new Viewable("/index.jsp", Map("sometext" -> "Some Text").asJava)
   }
 }

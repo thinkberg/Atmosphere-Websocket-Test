@@ -9,6 +9,7 @@
   <display-name>TWIMPACT Atmosphere Test</display-name>
 
   <!-- catch everything and only if it is a 404 fall through to the servlet -->
+<!--
   <filter>
     <filter-name>JerseyFilter</filter-name>
     <filter-class>com.sun.jersey.spi.container.servlet.ServletContainer</filter-class>
@@ -24,7 +25,7 @@
       <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
       <param-value>/(images)/.*</param-value>
     </init-param>
-    <!-- this did the trick -->
+    &lt;!&ndash; this did the trick &ndash;&gt;
     <init-param>
       <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
       <param-value>true</param-value>
@@ -34,6 +35,7 @@
     <filter-name>JerseyFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+-->
 
   <!-- catch /1/* -->
   <servlet>
@@ -41,7 +43,7 @@
     <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
     <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>twimpact.atmosphere</param-value>
+      <param-value>twimpact.atmosphere,twimpact.jersey</param-value>
     </init-param>
     <init-param>
       <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
@@ -65,7 +67,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AtmosphereFilter</servlet-name>
-    <url-pattern>/1/*</url-pattern>
+    <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>
