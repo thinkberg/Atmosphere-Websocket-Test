@@ -6,69 +6,68 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-  <display-name>TWIMPACT Atmosphere Test</display-name>
+    <display-name>TWIMPACT Atmosphere Test</display-name>
 
-  <!-- catch everything and only if it is a 404 fall through to the servlet -->
-  <filter>
-    <filter-name>JerseyFilter</filter-name>
-    <filter-class>com.sun.jersey.spi.container.servlet.ServletContainer</filter-class>
-    <init-param>
-      <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>twimpact.jersey</param-value>
-    </init-param>
-    <init-param>
-      <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
-      <param-value>true</param-value>
-    </init-param>
-    <init-param>
-      <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
-      <param-value>/(images)/.*</param-value>
-    </init-param>
-    <!-- this did the trick -->
-    <init-param>
-      <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
-      <param-value>true</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>JerseyFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+    <!-- catch everything and only if it is a 404 fall through to the servlet -->
+    <!--<filter>-->
+    <!--<filter-name>JerseyFilter</filter-name>-->
+    <!--<filter-class>com.sun.jersey.spi.container.servlet.ServletContainer</filter-class>-->
+    <!--<init-param>-->
+    <!--<param-name>com.sun.jersey.config.property.packages</param-name>-->
+    <!--<param-value>twimpact.jersey</param-value>-->
+    <!--</init-param>-->
+    <!--<init-param>-->
+    <!--<param-name>com.sun.jersey.config.feature.DisableWADL</param-name>-->
+    <!--<param-value>true</param-value>-->
+    <!--</init-param>-->
+    <!--<init-param>-->
+    <!--<param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>-->
+    <!--<param-value>/(images)/.*</param-value>-->
+    <!--</init-param>-->
+    <!--&lt;!&ndash; this did the trick &ndash;&gt;-->
+    <!--<init-param>-->
+    <!--<param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>-->
+    <!--<param-value>true</param-value>-->
+    <!--</init-param>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+    <!--<filter-name>JerseyFilter</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
 
-  <!-- catch /1/* -->
-  <servlet>
-    <servlet-name>AtmosphereFilter</servlet-name>
-    <servlet-class>org.atmosphere.cpr.AtmosphereServlet</servlet-class>
-    <init-param>
-      <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>twimpact.atmosphere</param-value>
-    </init-param>
-    <init-param>
-      <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
-      <param-value>true</param-value>
-    </init-param>
-    <init-param>
-      <param-name>org.atmosphere.cpr.dropAccessControlAllowOriginHeader</param-name>
-      <param-value>true</param-value>
-    </init-param>
-    <init-param>
-      <param-name>org.atmosphere.useWebSocket</param-name>
-      <param-value>true</param-value>
-    </init-param>
-    <init-param>
-      <param-name>org.atmosphere.useNative</param-name>
-      <param-value>true</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-    <async-supported>true</async-supported>
+    <!-- catch /1/* -->
 
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AtmosphereFilter</servlet-name>
-    <url-pattern>/1/*</url-pattern>
-  </servlet-mapping>
+    <filter>
+        <filter-name>AtmosphereFilter</filter-name>
+        <filter-class>org.atmosphere.cpr.AtmosphereFilter</filter-class>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>twimpact.atmosphere,twimpact.jersey</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.config.feature.FilterForwardOn404</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.cpr.dropAccessControlAllowOriginHeader</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>com.sun.jersey.config.property.WebPageContentRegex</param-name>
+            <param-value>/(images)/.*</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.useWebSocket</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <init-param>
+            <param-name>org.atmosphere.useNative</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>AtmosphereFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
 </web-app>
